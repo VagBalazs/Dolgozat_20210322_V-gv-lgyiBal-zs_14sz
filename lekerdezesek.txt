@@ -1,0 +1,19 @@
+SELECT konyv.id, helyezes, szerzo.nev, cim
+FROM konyv, szerzo
+WHERE konyv.szerzoId = szerzo.id ORDER BY helyezes ASC
+
+----
+
+SELECT konyv.id,cim,helyezes FROM konyv
+INNER JOIN szerzo ON konyv.szerzoId = szerzo.id 
+WHERE cim LIKE 'Harry%';
+
+---
+
+"SELECT konyv.id,cim,helyezes FROM konyv " +
+"INNER JOIN szerzo ON konyv.szerzoId = szerzo.id " +
+$"WHERE cim LIKE '{kulcsszo}%';"
+
+---
+
+SELECT nev FROM szerzo ORDER BY id ASC

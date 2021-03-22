@@ -1,0 +1,18 @@
+CREATE DATABASE nagykonyv;
+USE nagykonyv;
+
+CREATE TABLE szerzo (
+    id INT PRIMARY KEY NOT NULL,
+    nev VARCHAR(100) NOT NULL,
+    szulEv INT NOT NULL,
+    halEv INT,
+    nemzetiseg VARCHAR(100)
+)
+
+CREATE TABLE konyv(
+    id INT PRIMARY KEY NOT NULL,
+    cim VARCHAR(100) NOT NULL,
+    szerzoId INT NOT NULL,
+    helyezes INT NOT NULL,
+    FOREIGN KEY (szerzoId) REFERENCES szerzo(id)
+)
